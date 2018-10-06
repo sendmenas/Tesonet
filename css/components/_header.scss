@@ -1,0 +1,53 @@
+.header {
+	align-items: center;
+	box-shadow: 0 2px 4px 0 $shadow-1;
+	cursor: pointer;
+	display: flex;
+	height: 60px;
+	padding: 0 $global-padding;
+	min-width: 1440px;
+	.header__logo {
+		background-image: url(../Images/logo.svg);
+		height: 30.5px;
+		width: 140.73px;
+	}
+	.header__nav {
+		margin-left: 92.7px;
+		a {
+			color: $dark;
+			font-weight: 500;
+			height: 19px;
+			line-height: 19px;
+			text-transform: capitalize;
+			&:hover {
+				text-shadow: 0 0 5px $shadow-5;
+			}
+		}
+		.header__nav__home {
+			margin-right: 39px;
+			width: 43px;
+		}
+		.header__nav__shoes {
+			margin-right: 38px;
+			width: 45px;
+		}
+		.header__nav__tshirts {
+			margin-right: 36px;
+			width: 56px;
+		}
+		.header__nav__accesories {
+			width: 80px;
+		}
+	}
+	.button--header-register {
+		background-color: transparent;
+		border: 2px solid $border-grey;
+		color: $dark;
+		margin-left: auto;
+		margin-right: 9px; 
+	}
+	.button--header-login {
+		background-color: $dark;
+		color: white;
+	}
+}

@@ -1,0 +1,1 @@
+# Global padding on the rigth side is one pixel less (in the header);

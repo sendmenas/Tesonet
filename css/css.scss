@@ -1,0 +1,33 @@
+@import 'utils/sizes';
+@import 'utils/colors';
+
+@import 'components/header';
+@import 'components/main';
+
+html, body {
+	height: 100%; 
+	width: 100%;	
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+.button {
+	border: none;
+	border-radius: 2px;
+	height: 40px;
+	cursor: pointer;
+	text-transform: capitalize;
+	outline: none;
+	width: 123px;
+	&:hover {
+		background-color: $shadow-3;
+		border: none;
+		color: white;
+	}
+}

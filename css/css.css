@@ -1,0 +1,171 @@
+.header {
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+  padding: 0 190px;
+  min-width: 1440px;
+}
+.header .header__logo {
+  background-image: url(../Images/logo.svg);
+  height: 30.5px;
+  width: 140.73px;
+}
+.header .header__nav {
+  margin-left: 92.7px;
+}
+.header .header__nav a {
+  color: #202840;
+  font-weight: 500;
+  height: 19px;
+  line-height: 19px;
+  text-transform: capitalize;
+}
+.header .header__nav a:hover {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.header .header__nav .header__nav__home {
+  margin-right: 39px;
+  width: 43px;
+}
+.header .header__nav .header__nav__shoes {
+  margin-right: 38px;
+  width: 45px;
+}
+.header .header__nav .header__nav__tshirts {
+  margin-right: 36px;
+  width: 56px;
+}
+.header .header__nav .header__nav__accesories {
+  width: 80px;
+}
+.header .button--header-register {
+  background-color: transparent;
+  border: 2px solid #DEDEDE;
+  color: #202840;
+  margin-left: auto;
+  margin-right: 9px;
+}
+.header .button--header-login {
+  background-color: #202840;
+  color: white;
+}
+
+.main {
+  display: flex;
+  min-width: 1440px;
+  padding: 0 190px;
+}
+.main .main__left {
+  margin-right: 22px;
+  width: 355px;
+  height: 100%;
+}
+.main .main__left .main__left__slogan {
+  color: #202840;
+  font-size: 62px;
+  font-weight: bold;
+  height: 146px;
+  line-height: 73px;
+  margin-top: 140px;
+  text-align: left;
+  width: 100%;
+}
+.main .main__left .main__left__nav {
+  display: flex;
+  flex-direction: column;
+  height: 168px;
+  margin-top: 62px;
+}
+.main .main__left .main__left__nav a {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 18px;
+  line-height: 56px;
+}
+.main .main__left .main__left__nav a:first-child::before {
+  border-left: 4px solid #EB6763;
+  content: "";
+  height: 28px;
+  margin-right: 10px;
+}
+.main .main__right {
+  height: 100%;
+  position: relative;
+  width: 683px;
+}
+.main .main__right .main__right__shoe {
+  background-image: url("../../Images/1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 500px;
+  z-index: 1;
+}
+.main .main__right .main__right__background {
+  background-color: rgba(235, 103, 99, 0.2);
+  height: 402px;
+  left: 168px;
+  position: absolute;
+  top: 129px;
+  width: 408px;
+}
+.main .main__right .main__right__info {
+  color: #202840;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 321px;
+  width: 300px;
+}
+.main .main__right .main__right__info h3 {
+  font-size: 48px;
+  height: 49px;
+  line-height: 49px;
+  margin-bottom: 15px;
+  width: 299px;
+}
+.main .main__right .main__right__info p {
+  line-height: 24px;
+  margin-bottom: 27px;
+}
+.main .main__right .main__right__info .button--main-info {
+  background-color: #EB6763;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  border: none;
+  border-radius: 2px;
+  height: 40px;
+  cursor: pointer;
+  text-transform: capitalize;
+  outline: none;
+  width: 123px;
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+}
+
+/*# sourceMappingURL=css.css.map */
