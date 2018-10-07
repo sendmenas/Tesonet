@@ -1,9 +1,6 @@
 @import 'utils/sizes';
 @import 'utils/colors';
 
-@import 'components/header';
-@import 'components/main';
-
 html, body {
 	height: 100%; 
 	width: 100%;	
@@ -17,13 +14,16 @@ html, body {
 	padding: 0;
 }
 
+@import 'components/header';
+@import 'components/main';
+
 .button {
 	border: none;
 	border-radius: 2px;
 	height: 40px;
 	cursor: pointer;
-	text-transform: capitalize;
 	outline: none;
+	text-transform: capitalize;
 	width: 123px;
 	&:hover {
 		background-color: $shadow-3;

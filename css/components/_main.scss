@@ -1,5 +1,6 @@
 .main {
 	display: flex;
+	height: calc(100% - 60px);
 	min-width: 1440px;
 	padding: 0 $global-padding;
 	.main__left {
@@ -21,20 +22,27 @@
 			flex-direction: column;
 			height: 168px;
 			margin-top: 62px;
+			position: relative;
+			div {
+				height: 100%;
+				position: absolute;
+				width: 4px;
+				i {
+					background-color: $pink;
+					height: 28px;
+					position: absolute;
+					top: 14px;
+					transition: top 300ms, background-color 300ms;
+					width: 4px;
+				}
+			}
 			a {
 				align-items: center;
 				cursor: pointer;
 				display: flex;
 				font-size: 18px;
 				line-height: 56px;
-				&:first-child {
-					&::before {
-						border-left: 4px solid $pink;
-						content: "";
-						height: 28px;
-						margin-right: 10px; 
-					}
-				}
+				transition: margin-left 300ms;
 			}
 		}
 	}
@@ -42,23 +50,13 @@
 		height: 100%;
 		position: relative;
 		width: 683px;
-		.main__right__shoe {
-			background-image: url('../../Images/1.png');
-			background-position: center;
-			background-repeat: no-repeat;
-			height: 500px;
-			left: 0;
-			position: absolute;
-			top: 0;
-			width: 500px;
-			z-index: 1;
-		}
 		.main__right__background {
-			background-color: rgba(235,103,99,0.2);
+			background-color: $background-pink;
 			height: 402px;
 			left: 168px;
 			position: absolute;
 			top: 129px;
+			transition: background-color 300ms;
 			width: 408px;
 		}
 		.main__right__info {
@@ -70,7 +68,7 @@
 			top: 321px;
 			width: 300px;
 			h3 {
-				font-size: 48px;
+				font-size: 42px;
 				height: 49px;
 				line-height: 49px;
 				margin-bottom: 15px;
@@ -80,11 +78,114 @@
 				line-height: 24px;
 				margin-bottom: 27px;
 			}
-			.button--main-info {
+			.button {
 				background-color: $pink;
 				color: white;
+				transition: background-color 300ms;
 			}
 		}
-
 	}
+}
+
+.image-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	width: 500px;
+	z-index: 1;
+	> i {
+		left: 0;
+		position: absolute;
+		top: -500px;
+		background-position: center;
+		background-repeat: no-repeat;
+		flex-shrink: 0;
+		height: 500px;
+		width: 500px;				
+	}
+	.image-container__nike {
+		background-image: url('../../Images/1.png');
+	}
+	.image-container__shoes {
+		background-image: url('../../Images/2.png');
+	}
+	.image-container__sport {
+		background-image: url('../../Images/3.png');
+	}			
+}
+
+.slide-from-top {
+	animation-name: fromTopSlide;
+	animation-duration: 300ms;
+	animation-timing-fnction: ease-out;
+	animation-fill-mode: forwards;
+}
+
+.slide-from-bottom {
+	animation-name: fromBottomSlide;
+	animation-duration: 300ms;
+	animation-timing-fnction: ease-out;
+	animation-fill-mode: forwards;
+}
+
+.slide-to-top {
+	animation-name: toTopSlide;
+	animation-duration: 300ms;
+	animation-timing-fnction: ease-out;
+	animation-fill-mode: forwards;
+}
+
+.slide-to-bottom {
+	animation-name: toBottomSlide;
+	animation-duration: 300ms;
+	animation-timing-fnction: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fromTopSlide {
+  from {
+  	opacity: 0;
+  	top: -500px;
+  }
+  to {
+  	opacity: 1;
+  	top: 0;
+  }
+}
+
+@keyframes fromBottomSlide {
+  from {
+  	opacity: 0;
+  	top: 500px;
+  }
+  to {
+  	opacity: 1;
+  	top: 0;
+  }
+}
+
+@keyframes toTopSlide {
+  from {
+  	opacity: 1;
+  	top: 0;
+  }
+  to {
+  	opacity: 0;
+  	top: -500px;
+  }
+}
+
+@keyframes toBottomSlide {
+  from {
+  	opacity: 1;
+  	top: 0;
+  }
+  to {
+  	opacity: 0;
+  	top: 500px;
+  }
 }

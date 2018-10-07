@@ -1,1 +1,40 @@
 # Global padding on the rigth side is one pixel less (in the header);
+
+.modal {
+  border: solid 1px;
+
+  &.warning {
+    border-color: red;
+  }
+
+  &-wide {
+    width: 100%;
+  }
+
+  & + & {
+    margin-top: 1em;
+  }
+
+  .ie & {
+    &::before {
+      content: 'X';
+    }
+  }
+}
+
+.modal {
+	border: solid 1px;
+	margin-top: 1em;  
+}
+
+.modal.warning {
+	border-color: red;
+}
+
+.modal.warning-wide {
+	width: 100%;
+}
+
+.modal::before {
+	content: 'X';
+} 

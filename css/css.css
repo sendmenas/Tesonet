@@ -1,3 +1,16 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -54,6 +67,7 @@
 
 .main {
   display: flex;
+  height: calc(100% - 60px);
   min-width: 1440px;
   padding: 0 190px;
 }
@@ -77,6 +91,20 @@
   flex-direction: column;
   height: 168px;
   margin-top: 62px;
+  position: relative;
+}
+.main .main__left .main__left__nav div {
+  height: 100%;
+  position: absolute;
+  width: 4px;
+}
+.main .main__left .main__left__nav div i {
+  background-color: #EB6763;
+  height: 28px;
+  position: absolute;
+  top: 14px;
+  transition: top 300ms, background-color 300ms;
+  width: 4px;
 }
 .main .main__left .main__left__nav a {
   align-items: center;
@@ -84,28 +112,12 @@
   display: flex;
   font-size: 18px;
   line-height: 56px;
-}
-.main .main__left .main__left__nav a:first-child::before {
-  border-left: 4px solid #EB6763;
-  content: "";
-  height: 28px;
-  margin-right: 10px;
+  transition: margin-left 300ms;
 }
 .main .main__right {
   height: 100%;
   position: relative;
   width: 683px;
-}
-.main .main__right .main__right__shoe {
-  background-image: url("../../Images/1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 500px;
-  z-index: 1;
 }
 .main .main__right .main__right__background {
   background-color: rgba(235, 103, 99, 0.2);
@@ -113,6 +125,7 @@
   left: 168px;
   position: absolute;
   top: 129px;
+  transition: background-color 300ms;
   width: 408px;
 }
 .main .main__right .main__right__info {
@@ -125,7 +138,7 @@
   width: 300px;
 }
 .main .main__right .main__right__info h3 {
-  font-size: 48px;
+  font-size: 42px;
   height: 49px;
   line-height: 49px;
   margin-bottom: 15px;
@@ -135,31 +148,118 @@
   line-height: 24px;
   margin-bottom: 27px;
 }
-.main .main__right .main__right__info .button--main-info {
+.main .main__right .main__right__info .button {
   background-color: #EB6763;
   color: white;
+  transition: background-color 300ms;
 }
 
-html, body {
+.image-container {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  width: 100%;
+  left: 0;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  width: 500px;
+  z-index: 1;
+}
+.image-container > i {
+  left: 0;
+  position: absolute;
+  top: -500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  height: 500px;
+  width: 500px;
+}
+.image-container .image-container__nike {
+  background-image: url("../../Images/1.png");
+}
+.image-container .image-container__shoes {
+  background-image: url("../../Images/2.png");
+}
+.image-container .image-container__sport {
+  background-image: url("../../Images/3.png");
 }
 
-* {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
+.slide-from-top {
+  animation-name: fromTopSlide;
+  animation-duration: 300ms;
+  animation-timing-fnction: ease-out;
+  animation-fill-mode: forwards;
 }
 
+.slide-from-bottom {
+  animation-name: fromBottomSlide;
+  animation-duration: 300ms;
+  animation-timing-fnction: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-to-top {
+  animation-name: toTopSlide;
+  animation-duration: 300ms;
+  animation-timing-fnction: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.slide-to-bottom {
+  animation-name: toBottomSlide;
+  animation-duration: 300ms;
+  animation-timing-fnction: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fromTopSlide {
+  from {
+    opacity: 0;
+    top: -500px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes fromBottomSlide {
+  from {
+    opacity: 0;
+    top: 500px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes toTopSlide {
+  from {
+    opacity: 1;
+    top: 0;
+  }
+  to {
+    opacity: 0;
+    top: -500px;
+  }
+}
+@keyframes toBottomSlide {
+  from {
+    opacity: 1;
+    top: 0;
+  }
+  to {
+    opacity: 0;
+    top: 500px;
+  }
+}
 .button {
   border: none;
   border-radius: 2px;
   height: 40px;
   cursor: pointer;
-  text-transform: capitalize;
   outline: none;
+  text-transform: capitalize;
   width: 123px;
 }
 .button:hover {
