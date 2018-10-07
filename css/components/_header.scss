@@ -6,38 +6,21 @@
 	height: 60px;
 	padding: 0 $global-padding;
 	min-width: 1440px;
-	.header__logo {
-		background-image: url(../Images/logo.svg);
-		height: 30.5px;
-		width: 140.73px;
-	}
-	.header__nav {
-		margin-left: 92.7px;
-		a {
-			color: $dark;
-			font-weight: 500;
-			height: 19px;
-			line-height: 19px;
-			text-transform: capitalize;
-			&:hover {
-				text-shadow: 0 0 5px $shadow-5;
+	.header__container {
+	    align-items: center;
+	    display: flex;
+	    height: 100%;
+	    justify-content: center;
+	    margin: auto;
+	    width: 1060px;
+	    .header__container__nav {
+	    	align-items: center;
+	    	display: flex;
+	    	width: 100%;
+			div {
+				margin-left: auto;
 			}
-		}
-		.header__nav__home {
-			margin-right: 39px;
-			width: 43px;
-		}
-		.header__nav__shoes {
-			margin-right: 38px;
-			width: 45px;
-		}
-		.header__nav__tshirts {
-			margin-right: 36px;
-			width: 56px;
-		}
-		.header__nav__accesories {
-			width: 80px;
-		}
+	    }
 	}
 	.button--header-register {
 		background-color: transparent;
@@ -49,5 +32,160 @@
 	.button--header-login {
 		background-color: $dark;
 		color: white;
+	}
+}
+
+.header-logo {
+	background-image: url(../Images/logo.svg);
+	flex-shrink: 0;
+	height: 30.5px;
+	width: 140.73px;
+}
+
+.header-nav {
+	margin-left: 92.7px;
+	a {
+		color: $dark;
+		cursor: pointer;
+		font-weight: 500;
+		height: 19px;
+		line-height: 19px;
+		text-transform: capitalize;
+		user-select: none;
+	}
+	.header-nav__home {
+		margin-right: 39px;
+		width: 43px;
+	}
+	.header-nav__shoes {
+		margin-right: 38px;
+		width: 45px;
+	}
+	.header-nav__tshirts {
+		margin-right: 36px;
+		width: 56px;
+	}
+	.header-nav__accesories {
+		width: 80px;
+	}
+}
+
+.burger-menu {
+	background-color: initial;
+	border: none;
+	display: none;
+	flex-direction: column;
+	height: 20px;
+	justify-content: space-between;
+	margin: 0;
+	outline: none;
+	width: 22px;
+	i {
+		background-color: $dark;
+		border-radius: 2px;
+		height: 4px;
+		width: 22px;
+	}
+}
+
+.burger-menu-close {
+	background-color: initial;
+	background-image: url(../Images/burger-close.svg);
+	background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+	border: none;
+	display: none;
+	flex-shrink: 0;
+	height: 20px;
+	margin: 0;
+	outline: none;
+	width: 22px;
+}
+
+@media screen and (max-width: 320px) {
+	body {
+		overflow: hidden;
+	}
+	.header {
+		padding: 0 $global-padding-mobile;
+		min-width: 0;
+		width: 100%;
+		.header__container {
+			justify-content: space-between;
+			margin: 0;
+			.header__container__nav {
+				align-items: flex-start;
+				height: calc(100% - 60px);
+				flex-direction: column;
+				flex-shrink: 0;
+				left: 0;
+				position: absolute;
+				top: 60px;
+				width: 100%;
+				z-index: 2;
+				div {
+					background-color: white;
+					display: flex;
+					flex-shrink: 0;
+					justify-content: space-between;
+					margin-left: 0;
+					padding: 50px 20px 22px;
+					width: 100%;
+					> * {
+						width: 130px;
+					}
+				}
+				&::after {
+					background-color: $dark;
+					content: '';
+					height: 100%;
+					opacity: 0.8;
+					width: 100%;
+					z-index: 2;
+				}
+			}
+		}
+		.button--header-register {
+			margin-right: 0;
+			margin-left: 0;
+		}
+		.button--header-login {
+
+		}
+	}
+	.burger-menu {
+		display: flex;
+	}
+	.header-nav {
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		margin-left: 0;
+		padding: 0 20px;
+		width: 100%;
+		a {
+			cursor: default;
+		}
+		.header-nav__home {
+			margin-right: 0;
+			margin-top: 45px;
+			width: 43px;
+		}
+		.header-nav__shoes {
+			margin-right: 0;
+			margin-top: 30px;
+			width: 45px;
+		}
+		.header-nav__tshirts {
+			margin-right: 0;
+			margin-top: 30px;
+			width: 56px;
+		}
+		.header-nav__accesories {
+			width: 80px;
+			margin-top: 30px;
+		}
 	}
 }

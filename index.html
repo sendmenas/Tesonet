@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tesonet project</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/css.css">
@@ -13,40 +15,54 @@
 </head>
 <body>
 	<header class="header">
-		<a class="header__logo"></a>
-		<nav class="header__nav">
-			<a class="header__nav__home">home</a>
-			<a class="header__nav__shoes">shoes</a>
-			<a class="header__nav__tshirts">t-shirts</a>
-			<a class="header__nav__accesories">accesories</a>
-		</nav>
-		<button class="button button--header-register">register</button>
-		<button class="button button--header-login">login</button>
+		<section class="header__container">
+			<a class="header-logo"></a>
+			<section class="header__container__nav" id="headerNavigation">
+				<nav class="header-nav">
+					<a class="header-nav__home">home</a>
+					<a class="header-nav__shoes">shoes</a>
+					<a class="header-nav__tshirts">t-shirts</a>
+					<a class="header-nav__accesories">accesories</a>
+				</nav>
+				<div>
+					<button class="button button--header-register">register</button>
+					<button class="button button--header-login">login</button>				
+				</div>
+			</section>
+			<button class="burger-menu" id="openMobileMenu">
+				<i></i>
+				<i></i>
+				<i></i>
+			</button>
+			<button class="burger-menu-close" id="closeMobileMenu"></button>
+		</section>
 	</header>
 	<main class="main">
-		<section class="main__left">
-			<p class="main__left__slogan">Check out our products</p>
-			<nav class="main__left__nav">
-				<div>
-					<i id="selectionBar"></i>
+		<section class="main-container">
+			<section class="left">
+				<p class="left__slogan">Check out our products</p>
+				<nav class="left__nav">
+					<div>
+						<i id="selectionBar"></i>
+					</div>
+					<a id="selectNikeShoes" style="margin-left: 12px;">Nike shoes</a>
+					<a id="selectRegularShoes">Shoes</a>
+					<a id="selectSportShoes">Sport shoes</a>
+				</nav>
+			</section>
+			<section class="right">
+				<div class="image-container">
+					<i class="image-container__nike" id="nikeShoes"></i>	
+					<i class="image-container__shoes" id="regularShoes"></i>	
+					<i class="image-container__sport" id="sportShoes"></i>	
 				</div>
-				<a id="selectNikeShoes" style="margin-left: 12px;">Nike shoes</a>
-				<a id="selectRegularShoes">Shoes</a>
-				<a id="selectSportShoes">Sport shoes</a>
-			</nav>
-		</section>
-		<section class="main__right">
-			<div class="image-container">
-				<i class="image-container__nike slide-from-top" id="nikeShoes"></i>	
-				<i class="image-container__shoes" id="regularShoes"></i>	
-				<i class="image-container__sport" id="sportShoes"></i>	
-			</div>
-			<i class="main__right__background" id="mainBackground"></i>
-			<div class="main__right__info">
-				<h3 id="productHeader">Nike shoes</h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-				<button id="browseButton" class="button">browse</button>
-			</div>
+				<i class="right__background" id="mainBackground"></i>
+				<div class="right__info">
+					<h3 id="productHeader">Nike shoes</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<button id="browseButton" class="button">browse</button>
+				</div>
+			</section>
 		</section>
 	</main>
 </body>

@@ -24,6 +24,7 @@ html, body {
 	cursor: pointer;
 	outline: none;
 	text-transform: capitalize;
+	user-select: none;
 	width: 123px;
 	&:hover {
 		background-color: $shadow-3;

@@ -3,89 +3,100 @@
 	height: calc(100% - 60px);
 	min-width: 1440px;
 	padding: 0 $global-padding;
-	.main__left {
-		margin-right: 22px;
-		width: 355px;
-		height: 100%;
-		.main__left__slogan {
-			color: $dark;
-			font-size: 62px;
-			font-weight: bold;
-			height: 146px;
-			line-height: 73px;
-			margin-top: 140px;
-			text-align: left;
-			width: 100%;
-		}
-		.main__left__nav {
-			display: flex;
-			flex-direction: column;
-			height: 168px;
-			margin-top: 62px;
-			position: relative;
-			div {
-				height: 100%;
-				position: absolute;
-				width: 4px;
-				i {
-					background-color: $pink;
-					height: 28px;
-					position: absolute;
-					top: 14px;
-					transition: top 300ms, background-color 300ms;
-					width: 4px;
-				}
-			}
-			a {
-				align-items: center;
-				cursor: pointer;
-				display: flex;
-				font-size: 18px;
-				line-height: 56px;
-				transition: margin-left 300ms;
-			}
-		}
+	.main-container {
+		align-items: center;
+	    display: flex;
+	    height: 100%;
+	    justify-content: center;
+	    margin: auto;
+	    width: 1060px;
 	}
-	.main__right {
-		height: 100%;
-		position: relative;
-		width: 683px;
-		.main__right__background {
-			background-color: $background-pink;
-			height: 402px;
-			left: 168px;
-			position: absolute;
-			top: 129px;
-			transition: background-color 300ms;
-			width: 408px;
+}
+
+.right {
+	height: 100%;
+	position: relative;
+	width: 683px;
+	.right__background {
+		background-color: $background-pink;
+		height: 402px;
+		left: 168px;
+		position: absolute;
+		top: 129px;
+		transition: background-color 300ms;
+		width: 408px;
+	}
+	.right__info {
+		color: $dark;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		right: 0;
+		top: 321px;
+		width: 300px;
+		h3 {
+			font-size: 42px;
+			height: 49px;
+			line-height: 49px;
+			margin-bottom: 15px;
+			width: 299px;
 		}
-		.main__right__info {
-			color: $dark;
-			display: flex;
-			flex-direction: column;
-			position: absolute;
-			right: 0;
-			top: 321px;
-			width: 300px;
-			h3 {
-				font-size: 42px;
-				height: 49px;
-				line-height: 49px;
-				margin-bottom: 15px;
-				width: 299px;
-			}
-			p {
-				line-height: 24px;
-				margin-bottom: 27px;
-			}
-			.button {
-				background-color: $pink;
-				color: white;
-				transition: background-color 300ms;
-			}
+		p {
+			line-height: 24px;
+			margin-bottom: 27px;
+		}
+		.button {
+			background-color: $pink;
+			color: white;
+			transition: background-color 300ms;
 		}
 	}
 }
+
+.left {
+	margin-right: 22px;
+	width: 355px;
+	height: 100%;
+	.left__slogan {
+		color: $dark;
+		font-size: 62px;
+		font-weight: bold;
+		height: 146px;
+		line-height: 73px;
+		margin-top: 140px;
+		text-align: left;
+		width: 100%;
+	}
+	.left__nav {
+		display: flex;
+		flex-direction: column;
+		height: 168px;
+		margin-top: 62px;
+		position: relative;
+		div {
+			height: 100%;
+			position: absolute;
+			width: 4px;
+			i {
+				background-color: $pink;
+				height: 28px;
+				position: absolute;
+				top: 14px;
+				transition: top 300ms, background-color 300ms;
+				width: 4px;
+			}
+		}
+		a {
+			align-items: center;
+			cursor: pointer;
+			display: flex;
+			font-size: 18px;
+			line-height: 56px;
+			transition: margin-left 300ms;
+		}
+	}
+}
+
 
 .image-container {
 	display: flex;
@@ -98,13 +109,13 @@
 	width: 500px;
 	z-index: 1;
 	> i {
-		left: 0;
-		position: absolute;
-		top: -500px;
 		background-position: center;
 		background-repeat: no-repeat;
 		flex-shrink: 0;
 		height: 500px;
+		left: 0;
+		position: absolute;
+		top: -500px;
 		width: 500px;				
 	}
 	.image-container__nike {
@@ -121,28 +132,28 @@
 .slide-from-top {
 	animation-name: fromTopSlide;
 	animation-duration: 300ms;
-	animation-timing-fnction: ease-out;
+	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
 .slide-from-bottom {
 	animation-name: fromBottomSlide;
 	animation-duration: 300ms;
-	animation-timing-fnction: ease-out;
+	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
 .slide-to-top {
 	animation-name: toTopSlide;
 	animation-duration: 300ms;
-	animation-timing-fnction: ease-out;
+	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
 .slide-to-bottom {
 	animation-name: toBottomSlide;
 	animation-duration: 300ms;
-	animation-timing-fnction: ease-out;
+	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
@@ -188,4 +199,139 @@
   	opacity: 0;
   	top: 500px;
   }
+}
+
+@media screen and (max-width: 320px) {
+	.main {
+		padding: 0;
+		min-width: 0;
+		overflow: auto;
+		width: 100%;
+		.main-container {
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+	.left {
+		height: auto;
+		margin-right: 0;
+		padding: 0 $global-padding-mobile;
+		width: 100%;
+		.left__slogan {
+			font-size: 32px;
+			height: 76px;
+			line-height: 38px;
+			margin-top: 36px;
+			width: 183px;
+		}
+		.left__nav {
+			flex-direction: row;
+			height: auto;
+			justify-content: space-between;
+			margin-top: 30px;
+			width: 100%;
+			div {
+				display: none;
+			}
+			a {
+				cursor: default;
+				font-size: 16px;
+				justify-content: center;
+				line-height: 19px;
+				margin: 0!important;
+				position: relative;
+				user-select: none;
+				width: 92px;
+				&.selected {
+					&::before {
+						bottom: -10px;
+						background-color: $grey;
+						content: "";
+						height: 4px;
+						position: absolute;
+						bottom: -10px;
+						width: 100%;
+					}
+				}
+				&.selected {
+					&:first-of-type {
+						&::before {
+							background-color: $pink;
+						}
+					}					
+				}
+				&:last-of-type {
+					&.selected {
+						&::before {
+							background-color: $yellow;
+						}
+					}					
+				}
+			}
+		}
+	}
+	.right {
+		margin-right: 0;
+		width: 100%;
+		.right__background {
+			height: 391px;
+			left: 0;
+			position: absolute;
+			top: 108px;
+			transition: none;
+			width: 100%;
+		}
+		.right__info {
+			color: $dark;
+			display: flex;
+			flex-direction: column;
+			padding: 0 $global-padding-mobile;
+			position: absolute;
+			right: 0;
+			top: 250px;
+			width: 100%;
+			h3 {
+				font-size: 28px;
+				height: 33px;
+				line-height: 33px;
+				margin-bottom: 10px;
+				width: 100%;
+			}
+			p {
+				font-size: 14px;
+				line-height: 21px;
+				margin-bottom: 32px;
+			}
+			.button {
+				background-color: $pink;
+				color: white;
+				transition: none;
+			}
+		}
+	}
+	.image-container {
+		align-items: center;
+		display: flex;
+		height: 320px;
+		width: 100%;
+		> i {
+			background-size: contain;
+			display: none;
+			height: 218px;
+			margin-top: 18px;
+			left: auto;
+			position: relative;
+			top: auto;
+			width: 224px;				
+		}
+		.image-container__nike {
+			background-image: url('../../Images/1.png');
+		}
+		.image-container__shoes {
+			background-image: url('../../Images/2.png');
+		}
+		.image-container__sport {
+			background-image: url('../../Images/3.png');
+		}			
+	}
 }
