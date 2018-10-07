@@ -21,7 +21,6 @@ class ProductSlider {
 		this.timeoutId = null;
 		this.selectionIndex = 1;
 		
-		console.log(screen.width);
 		if (screen.width > 320) {
 			this.setDesktopFunctionality();	
 		} else {
