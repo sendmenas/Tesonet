@@ -29,49 +29,46 @@ class ProductSlider {
 	}
 
 	setDesktopFunctionality() {
-		let that = this;
 		this.imageNikeShoes.className = 'image-container__nike slide-from-top';
-		document.addEventListener('wheel', (e) => { that.onMouseScroll(e); });
-		this.selectNikeShoes.addEventListener('click', (e) => { that.changeSelection('nike'); });
-		this.selectRegularShoes.addEventListener('click', (e) => { that.changeSelection('regular'); });
-		this.selectSportShoes.addEventListener('click', (e) => { that.changeSelection('sport'); });
+		document.addEventListener('wheel', (e) => { this.onMouseScroll(e); });
+		this.selectNikeShoes.addEventListener('click', (e) => { this.changeSelection('nike'); });
+		this.selectRegularShoes.addEventListener('click', (e) => { this.changeSelection('regular'); });
+		this.selectSportShoes.addEventListener('click', (e) => { this.changeSelection('sport'); });
 	}
 
 	setMobileFunctionality() {
-		let that = this;
 		this.imageNikeShoes.setAttribute('style', 'display: initial;');
 		this.headerNavigation.setAttribute('style', 'display: none;');
 		this.selectNikeShoes.className = 'selected';
-		this.openMobileMenu.addEventListener('click', (e) => { that.showMobileMenu(); })
-		this.closeMobileMenu.addEventListener('click', (e) => { that.hideMobileMenu(); })
-		this.selectNikeShoes.addEventListener('click', (e) => { that.changeMobileSelection('nike'); });
-		this.selectRegularShoes.addEventListener('click', (e) => { that.changeMobileSelection('regular'); });
-		this.selectSportShoes.addEventListener('click', (e) => { that.changeMobileSelection('sport'); });			
+		this.openMobileMenu.addEventListener('click', (e) => { this.showMobileMenu(); })
+		this.closeMobileMenu.addEventListener('click', (e) => { this.hideMobileMenu(); })
+		this.selectNikeShoes.addEventListener('click', (e) => { this.changeMobileSelection('nike'); });
+		this.selectRegularShoes.addEventListener('click', (e) => { this.changeMobileSelection('regular'); });
+		this.selectSportShoes.addEventListener('click', (e) => { this.changeMobileSelection('sport'); });			
 	}
 
 	onMouseScroll(event) {
-		let that = this;
 		if (this.timeoutId != null) {
 			clearTimeout(this.timeoutId);
 		}
 		if (event.wheelDeltaY > 0) {
 			if (this.selectionIndex == 2) {
 				this.timeoutId = setTimeout(function() {
-					that.changeSelection('nike');
+					this.changeSelection('nike');
 				}, 250);
 			} else if (this.selectionIndex == 3) {
 				this.timeoutId = setTimeout(function() {
-					that.changeSelection('regular');
+					this.changeSelection('regular');
 				}, 250);
 			}
 		} else {
 			if (this.selectionIndex == 1) {
 				this.timeoutId = setTimeout(function() {
-					that.changeSelection('regular');
+					this.changeSelection('regular');
 				}, 250);
 			} else if (this.selectionIndex == 2) {
 				this.timeoutId = setTimeout(function() {
-					that.changeSelection('sport');
+					this.changeSelection('sport');
 				}, 250);
 			}			
 		}
