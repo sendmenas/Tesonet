@@ -29,8 +29,9 @@ class ProductSlider {
 	}
 
 	setDesktopFunctionality() {
+		let that = this;
 		this.imageNikeShoes.className = 'image-container__nike slide-from-top';
-		document.addEventListener('wheel', (e) => { this.onMouseScroll(e); });
+		document.addEventListener('wheel', (e) => { this.onMouseScroll(e, that); });
 		this.selectNikeShoes.addEventListener('click', (e) => { this.changeSelection('nike'); });
 		this.selectRegularShoes.addEventListener('click', (e) => { this.changeSelection('regular'); });
 		this.selectSportShoes.addEventListener('click', (e) => { this.changeSelection('sport'); });
@@ -47,28 +48,28 @@ class ProductSlider {
 		this.selectSportShoes.addEventListener('click', (e) => { this.changeMobileSelection('sport'); });			
 	}
 
-	onMouseScroll(event) {
-		if (this.timeoutId != null) {
-			clearTimeout(this.timeoutId);
+	onMouseScroll(event, that) {
+		if (that.timeoutId != null) {
+			clearTimeout(that.timeoutId);
 		}
 		if (event.wheelDeltaY > 0) {
-			if (this.selectionIndex == 2) {
-				this.timeoutId = setTimeout(function() {
-					this.changeSelection('nike');
+			if (that.selectionIndex == 2) {
+				that.timeoutId = setTimeout(function() {
+					that.changeSelection('nike');
 				}, 250);
-			} else if (this.selectionIndex == 3) {
-				this.timeoutId = setTimeout(function() {
-					this.changeSelection('regular');
+			} else if (that.selectionIndex == 3) {
+				that.timeoutId = setTimeout(function() {
+					that.changeSelection('regular');
 				}, 250);
 			}
 		} else {
-			if (this.selectionIndex == 1) {
-				this.timeoutId = setTimeout(function() {
-					this.changeSelection('regular');
+			if (that.selectionIndex == 1) {
+				that.timeoutId = setTimeout(function() {
+					that.changeSelection('regular');
 				}, 250);
-			} else if (this.selectionIndex == 2) {
-				this.timeoutId = setTimeout(function() {
-					this.changeSelection('sport');
+			} else if (that.selectionIndex == 2) {
+				that.timeoutId = setTimeout(function() {
+					that.changeSelection('sport');
 				}, 250);
 			}			
 		}
